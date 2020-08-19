@@ -8,6 +8,12 @@ const CREDIT_CARD_PAYMENT = "Tarjeta de crédito";
 const BANKING_PAYMENT = "Transferencia bancaria";
 let ERROR_MSG = "Ha habido un error :(, verifica qué pasó.";
 
+
+//Advertencia
+
+alert("No ingrese sus datos aquí. Esta web tiene propósitos meramente educativos");
+
+
 //Función que se utiliza para actualizar los costos de publicación
 function updateTotalCosts(){
   let comissionCostHTML = document.getElementById("comissionText");
@@ -105,7 +111,6 @@ document.addEventListener("DOMContentLoaded", function(e){
   
       //Si es pago con tarjeta
       if (metodoDePagoCredito.checked)
-      alert("No ingrese sus datos aquí. Esta web tiene propósitos meramente educativos");
       {
           infoMissing = false;
           //Validamos que la tarjeta no este vacia
@@ -124,7 +129,6 @@ document.addEventListener("DOMContentLoaded", function(e){
       }
   
       if(metodoDePagoBanco.checked){
-        alert("No ingrese sus datos aquí. Esta web tiene propósitos meramente educativos");
           infoMissing = false;
           //Validamos que la cuenta de banco no este vacia
           if(cuentaDeBanco.value === ""){
