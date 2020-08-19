@@ -24,7 +24,12 @@ function sortProducts(criteria, array){
             if ( a.cost < b.cost ){ return 1; }
             return 0;
         });
-    }
+    }else if (criteria === ORDER_BY_POP){
+        result = array.sort(function(a, b) {
+            if ( a.soldCount > b.soldCount ){ return -1; }
+            if ( a.soldCount < b.soldCount ){ return 1; }
+            return 0;
+        });
     return result;
 }
 
