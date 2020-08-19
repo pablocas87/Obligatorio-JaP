@@ -19,14 +19,13 @@ function sortProducts(criteria, array){
             if ( a.cost > b.cost ){ return 1; }
             return 0;
         });
-    }else if (criteria === ORDER_DESC_BY_COST){
+    }if (criteria === ORDER_DESC_BY_COST){
         result = array.sort(function(a, b) {
             if ( a.cost > b.cost ){ return -1; }
             if ( a.cost < b.cost ){ return 1; }
             return 0;
         });
-    } if (criteria === ORDER_BY_POP)
-    {
+    }else if (criteria === ORDER_BY_POP){
         result = array.sort(function(a, b) {
             if ( a.soldCount < b.soldCount ){ return -1; }
             if ( a.soldCount > b.soldCount ){ return 1; }
