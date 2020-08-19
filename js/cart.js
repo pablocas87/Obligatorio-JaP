@@ -11,8 +11,11 @@ let ERROR_MSG = "Ha habido un error :(, verifica qué pasó.";
 
 //Advertencia
 
-alert("No ingrese sus datos aquí. Esta web tiene propósitos meramente educativos");
+function advertencia(){
+  alert("No ingrese sus datos aquí. Esta web tiene propósitos meramente educativos");
 
+  advertencia();
+}
 
 //Función que se utiliza para actualizar los costos de publicación
 function updateTotalCosts(){
