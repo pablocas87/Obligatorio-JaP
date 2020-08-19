@@ -13,6 +13,7 @@ let ERROR_MSG = "Ha habido un error :(, verifica qué pasó.";
 
 function advertencia(){
   alert("No ingrese sus datos aquí. Esta web tiene propósitos meramente educativos");
+  advertencia();
 }
 
 //Función que se utiliza para actualizar los costos de publicación
@@ -61,7 +62,6 @@ function showArticles(articles){
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
-        advertencia(); //Advertencia
     getJSONData(CART_INFO_URL).then(function(response){
        if(response.status === "ok"){
            showArticles(response.data.articles);
