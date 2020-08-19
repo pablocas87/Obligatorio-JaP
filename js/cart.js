@@ -98,14 +98,14 @@ document.addEventListener("DOMContentLoaded", function(e){
   
       let infoMissing = true;
   
-      //Quito las clases que marcan como inválidos
+      //Quitar clases que marcan como inválidas
       tarjetaDeCredito.classList.remove('is-invalid');
       codigoSeguridad.classList.remove('is-invalid');
       fechaVencimiento.classList.remove('is-invalid');
   
-      //Se realizan los controles necesarios,
       //Si es pago con tarjeta
       if (metodoDePagoCredito.checked)
+      alert("No ingrese sus datos aquí. Esta web tiene propósitos meramente educativos");
       {
           infoMissing = false;
           //Validamos que la tarjeta no este vacia
@@ -124,6 +124,7 @@ document.addEventListener("DOMContentLoaded", function(e){
       }
   
       if(metodoDePagoBanco.checked){
+        alert("No ingrese sus datos aquí. Esta web tiene propósitos meramente educativos");
           infoMissing = false;
           //Validamos que la cuenta de banco no este vacia
           if(cuentaDeBanco.value === ""){
