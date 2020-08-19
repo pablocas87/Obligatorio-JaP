@@ -2,7 +2,7 @@ let minCount = undefined;
 let maxCount = undefined;
 let currentProductArray = [];
 let ORDER_ASC_BY_COST = "AZ";
-let ORDER_DESC_BY_COST = "ZA";
+let ORDER_DESC_BY_COST = "ZA"
 
 function sortAndShowProducts(sort){
     currentProductArray = sortProducts(sort,currentProductArray);
