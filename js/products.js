@@ -2,6 +2,7 @@ let minCount = undefined;
 let maxCount = undefined;
 let currentProductArray = [];
 let ORDER_ASC_BY_COST = "AZ";
+let ORDER_BY_POP = 0;
 let ORDER_DESC_BY_COST = "ZA"
 
 function sortAndShowProducts(sort){
@@ -22,6 +23,13 @@ function sortProducts(criteria, array){
         result = array.sort(function(a, b) {
             if ( a.cost > b.cost ){ return -1; }
             if ( a.cost < b.cost ){ return 1; }
+            return 0;
+        });
+    } if (criteria === ORDER_BY_POP)
+    {
+        result = array.sort(function(a, b) {
+            if ( a.soldCount < b.soldCount ){ return -1; }
+            if ( a.soldCount > b.soldCount ){ return 1; }
             return 0;
         });
     }
