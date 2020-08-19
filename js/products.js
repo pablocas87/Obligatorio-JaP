@@ -106,6 +106,10 @@ document.addEventListener("DOMContentLoaded", function(e){
         sortAndShowProducts(ORDER_DESC_BY_COST);
     });
 
+    document.getElementById("sortPop").addEventListener("click", function(){
+        sortAndShowProducts(ORDER_BY_POP);
+    });
+
     document.getElementById("clearRangeFilter").addEventListener("click", function(){
         document.getElementById("rangeFilterCountMin").value = "";
         document.getElementById("rangeFilterCountMax").value = "";
