@@ -2,7 +2,7 @@ let minCount = undefined;
 let maxCount = undefined;
 let currentProductArray = [];
 let ORDER_ASC_BY_COST = "AZ";
-let ORDER_BY_POP = 0;
+let ORDER_BY_POP = "";
 let ORDER_DESC_BY_COST = "ZA"
 
 function sortAndShowProducts(sort){
@@ -19,7 +19,7 @@ function sortProducts(criteria, array){
             if ( a.cost > b.cost ){ return 1; }
             return 0;
         });
-    }if (criteria === ORDER_DESC_BY_COST){
+    }else if (criteria === ORDER_DESC_BY_COST){
         result = array.sort(function(a, b) {
             if ( a.cost > b.cost ){ return -1; }
             if ( a.cost < b.cost ){ return 1; }
@@ -27,8 +27,8 @@ function sortProducts(criteria, array){
         });
     }else if (criteria === ORDER_BY_POP){
         result = array.sort(function(a, b) {
-            if ( a.soldCount < b.soldCount ){ return -1; }
-            if ( a.soldCount > b.soldCount ){ return 1; }
+            if ( a.soldCount > b.soldCount ){ return -1; }
+            if ( a.soldCount < b.soldCount ){ return 1; }
             return 0;
         });
     }
@@ -105,6 +105,10 @@ document.addEventListener("DOMContentLoaded", function(e){
 
     document.getElementById("sortDesc").addEventListener("click", function(){
         sortAndShowProducts(ORDER_DESC_BY_COST);
+    });
+
+    document.getElementById("sortPop").addEventListener("click", function(){
+        sortAndShowProducts(ORDER_BY_POP);
     });
 
     document.getElementById("clearRangeFilter").addEventListener("click", function(){
