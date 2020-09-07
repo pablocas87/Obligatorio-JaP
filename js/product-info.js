@@ -17,7 +17,7 @@ function showImagesGallery(array){
    
 }
 //Comentarios
-
+/**
 function showComments(array){
     let comments = "";
     for (let i = 0; i < array.length; i++){
@@ -33,7 +33,7 @@ function showComments(array){
     document.getElementById("productComments").innerHTML = comments;
    
 }
-
+*/
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
@@ -51,7 +51,7 @@ function datos(product){
     document.getElementById("productCount").innerHTML = product.currency + " " + product.cost;
     document.getElementById("productName").innerHTML = product.name;
 }
-
+/**
 //Comentarios
 document.addEventListener("DOMContentLoaded", function(e){
     getJSONData(PRODUCT_INFO_COMMENTS_URL).then(function(resultObj){
@@ -66,4 +66,5 @@ function datos(product){
     document.getElementById("userComment").innerHTML = comentario.description;
     document.getElementById("commentUser").innerHTML = comentario.user + " " + comentario.dateTime;
     document.getElementById("productScore").innerHTML = product.score;
-}
+}  
+ */
