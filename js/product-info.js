@@ -92,7 +92,7 @@ function datos(product){
 
 verificarComentario = function(){
     
-    if(document.getElementById("comentario").value.length > 3)
+    if(document.getElementById("comentario").value.length > 5)
     {
         
         comentar();
@@ -107,20 +107,20 @@ verificarComentario = function(){
 
 function comentar()
 {
-    let comentario = {
+    let coment = {
         "score": undefined,
         "description": undefined,
         "user": undefined,
         "dateTime": undefined
     };
-    comentario.user = localStorage.getItem("usuario");
-    comentario.description = document.getElementById("comentario").value;
-    comentario.score = document.getElementById("puntaje").value;
-    comentario.dateTime = fechaActual();
-    comentarios.push(comentario);
+    coment.user = localStorage.getItem("usuario");
+    coment.description = document.getElementById("comentario").value;
+    coment.score = document.getElementById("puntaje").value;
+    coment.dateTime = fechaActual();
+    coment.push(comentario);
     showComments()
     document.getElementById("comentario").value = undefined;
-    comentario.score = document.getElementById("puntaje").value = "1";
+    coment.score = document.getElementById("puntaje").value = "1";
 
 }
 
