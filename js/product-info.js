@@ -24,16 +24,31 @@ function showComments(array){
     let comments = "";
     for (let i = 0; i < array.length; i++){
         let comentario = array[i];
-        comments +=  
-        `<div>
-            <div>
-                <table align="center">
-                    <tr>
-                        <td><p>`+comentario.description+`</p></td>
-                    <tr>
-                </table>
-            </div>
-        </div>`;
+        let estrella = [];
+        for(let ii = 0; ii < 5; ii++){
+            if (comentario.score > ii)
+            {
+                estrella[ii] = "fa fa-star checked";
+            }
+            else {
+                estrella[ii] = "fa fa-star";
+            }
+        }
+        comments += `
+        <div>
+                <div class="col">
+                    <h4 class="mb-1">`+ comentario.user +`</h4>
+                    <span class="`+estrella[0]+`"></span>
+                    <span class="`+estrella[1]+`"></span>
+                    <span class="`+estrella[2]+`"></span>
+                    <span class="`+estrella[3]+`"></span>
+                    <span class="`+estrella[4]+`"></span>
+                    <div class="d-flex w-100 justify-content-between">
+                        <p class="mb-1">`+ comentario.description + `</p>
+                        <small class="text-muted"> realizado el ` +comentario.dateTime+  `</small>
+                    </div>    
+             </div>
+             <br>`;
     }
     
     
@@ -70,3 +85,63 @@ function datos(product){
     document.getElementById("productCount").innerHTML = product.currency + " " + product.cost;
     document.getElementById("productName").innerHTML = product.name;
 }
+
+
+
+// COMENTAR
+
+verificarComentario = function(){
+    
+    if(document.getElementById("comentario").value.length > 3)
+    {
+        
+        comentar();
+    }
+    else {
+        
+        alert ("Comentario inexistente o muy corto");
+    }
+          
+}
+
+
+function comentar()
+{
+    let comentario = {
+        "score": undefined,
+        "description": undefined,
+        "user": undefined,
+        "dateTime": undefined
+    };
+    comentario.user = localStorage.getItem("usuario");
+    comentario.description = document.getElementById("comentario").value;
+    comentario.score = document.getElementById("puntaje").value;
+    comentario.dateTime = fechaActual();
+    comentaries.push(comentario);
+    showComments()
+    document.getElementById("comentario").value = undefined;
+    comentario.score = document.getElementById("puntaje").value = "1";
+
+}
+
+function fechaActual()
+{
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth() + 1; //January is 0!
+    var yyyy = today.getFullYear();
+    var hh = today.getHours();
+    var minmin = today.getMinutes();
+    var ss = today.getSeconds();
+
+        if (dd < 10) {
+            dd = '0' + dd;
+        }
+
+        if (mm < 10) {
+            mm = '0' + mm;
+        }
+
+            today = yyyy + '-' + mm + '-' + dd + " "+hh+ ":"+ minmin + ":"+ ss;
+        return today;
+    }
