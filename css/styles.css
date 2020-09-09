@@ -141,3 +141,7 @@ a.custom-card:hover {
 .imgproduct{
 margin-left: 15%;
 }
+
+.checked {
+  color: orange;
+}
