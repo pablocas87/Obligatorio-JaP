@@ -107,20 +107,20 @@ verificarComentario = function(){
 
 function comentar()
 {
-    let coment = {
+    let comments = {
         "score": undefined,
         "description": undefined,
         "user": undefined,
         "dateTime": undefined
     };
-    coment.user = localStorage.getItem("usuario");
-    coment.description = document.getElementById("comentario").value;
-    coment.score = document.getElementById("puntaje").value;
-    coment.dateTime = fechaActual();
-    comentarios.push(comentario);
+    comments.user = localStorage.getItem("usuario");
+    comments.description = document.getElementById("comentario").value;
+    comments.score = document.getElementById("puntaje").value;
+    comments.dateTime = fechaActual();
+    comentarios.push(comments);
     showComments()
     document.getElementById("comentario").value = undefined;
-    coment.score = document.getElementById("puntaje").value = "1";
+    comments.score = document.getElementById("puntaje").value = "1";
 
 }
 
