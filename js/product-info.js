@@ -111,12 +111,38 @@ function comentar() {
         "user": undefined,
         "dateTime": undefined
     };
-    newcom.score = document.getElementById("puntaje").value = "1";
+    let estrella = [];
+    for(let ii = 0; ii < 5; ii++){
+        if (newcom.score > ii)
+        {
+            estrella[ii] = "fa fa-star checked";
+        }
+        else {
+            estrella[ii] = "fa fa-star";
+        }
+    }
+    newcom.score = document.getElementById("puntaje").value;
     newcom.description = document.getElementById("comentario").value;
     newcom.user = localStorage.getItem("usuario");
     newcom.dateTime = fechaActual();
-    comentarios.push(newcom);
-    showComments();
+    newcom += `
+    
+            <div class="col">
+                <h4 class="mb-1">`+ newcom.user +`</h4>
+                <span class="`+estrella[0]+`"></span>
+                <span class="`+estrella[1]+`"></span>
+                <span class="`+estrella[2]+`"></span>
+                <span class="`+estrella[3]+`"></span>
+                <span class="`+estrella[4]+`"></span>
+                <div class="d-flex w-100 justify-content-between">
+                    <p class="mb-1">`+ newcom.description + `</p>
+                    <small class="text-muted"> realizado el ` +newcom.dateTime+  `</small>
+                </div>    
+         
+         <br>`;
+
+document.getElementById("productComments").innerHTML += newcom;
+
 }
 
 function fechaActual()
