@@ -168,7 +168,19 @@ function fechaActual()
     }
 
     let productRelatedProducts;
-    
+
+    function obtainAllProducts() {
+        getJSONData(PRODUCTS_URL).then(function (resultObj) {
+            if(resultObj.status === "ok") {
+                productRelatedProducts = resultObj.data;
+            }
+            showRelatedProducts();
+        });
+    };
+
+    relatedsContainer = document.getElementById("product-relateds");
+});
+
     function showRelatedProducts() {
         let htmlToAppend = `
             <h3 class="text-center">Productos relacionados</h2>
