@@ -1,5 +1,6 @@
 var product = {};
 var comentarios ={};
+var productRelatedProducts;
 
 function showImagesGallery(array){
     let imagenes = "";
@@ -167,19 +168,7 @@ function fechaActual()
         return today;
     }
 
-    let productRelatedProducts;
-
-    function obtainAllProducts() {
-        getJSONData(PRODUCTS_URL).then(function (resultObj) {
-            if(resultObj.status === "ok") {
-                productRelatedProducts = resultObj.data;
-            }
-            showRelatedProducts();
-        });
-    };
-
-    relatedsContainer = document.getElementById("product-relateds");
-});
+    
 
     function showRelatedProducts() {
         let htmlToAppend = `
