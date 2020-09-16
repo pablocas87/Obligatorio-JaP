@@ -166,3 +166,35 @@ function fechaActual()
             today = yyyy + '-' + mm + '-' + dd + " "+hh+ ":"+ minmin + ":"+ ss;
         return today;
     }
+
+    let productRelatedProducts;
+    
+    function showRelatedProducts() {
+        let htmlToAppend = `
+            <h3 class="text-center">Productos relacionados</h2>
+            <div class="row justify-content-center">
+        `;
+    
+        for (let i = 0; i < productInfo.relatedProducts.length; i++){
+            related = productRelatedProducts[productInfo.relatedProducts[i]];
+            htmlToAppend += `
+            <a href="">
+                <div class="col-auto">
+                        <div class="card" style="width: 18rem;">
+                            <img src="${related.imgSrc}" class="card-img-top w-75 d-block mx-auto">
+                            <div class="card-body">
+                                <h4 class="card-title text-body">${related.name}</h4>
+                                <p class="card-text text-dark">${related.currency} $ ${related.cost}</p>
+                            </div>
+                        </div>
+                </div>
+            </a>
+            `;
+        }
+    
+        htmlToAppend += `
+            </div>
+            <hr>
+        `;
+        relatedsContainer.innerHTML = htmlToAppend;
+    }
