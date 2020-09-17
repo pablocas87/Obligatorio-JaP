@@ -1,5 +1,6 @@
 var product = {};
 var comentarios ={};
+var prod_relacionados = {};
 
 function showImagesGallery(array){
     let imagenes = "";
@@ -54,9 +55,38 @@ function showComments(array){
     
     
     document.getElementById("productComments").innerHTML = comments;
+
+    
    
 }
 //comentarios
+
+
+function showProductsRelated(array) {
+    let relatedProd = document.getElementById("img-related");
+    let products = array;
+
+    let htmlContentToAppend = "";
+    for (let i = 0; i < prod_relacionados.length; i++) {
+        let id = prod_relacionados[i];
+        htmlContentToAppend += `
+            <div class="col-md-3 col-sm-6 mb-4">
+                <a href="#" text-decoration-none>
+                    <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+                        <img src=` + products[id].imgSrc + ` class="card-img-top" alt=` + products[id].name + `>
+                        <div class="card-body">
+                            <h5 class="card-title text-black-50">` + products[id].currency + ` - ` + products[id].cost + `</h5>
+                            <p class="card-text text-dark">` + products[id].name + `</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            `
+        relatedProd.innerHTML = htmlContentToAppend;
+
+    }
+}
+
 
 
 //Función que se ejecuta una vez que se haya lanzado el evento de
@@ -81,6 +111,14 @@ document.addEventListener("DOMContentLoaded", function(e){
         }
     });
 
+    getJSONData(PRODUCTS_URL).then(function(resultObj) {
+        if (resultObj.status === "ok") {
+            var products = resultObj.data;
+            showProductsRelated(products);
+
+        }
+    });
+
 });
 
 
@@ -88,6 +126,8 @@ function datos(product){
     document.getElementById("productDescription").innerHTML = product.description;
     document.getElementById("productCount").innerHTML = product.currency + " " + product.cost;
     document.getElementById("productName").innerHTML = product.name;
+    prod_relacionados = product.relatedProducts;
+    return prod_relacionados;
     
 }
 
