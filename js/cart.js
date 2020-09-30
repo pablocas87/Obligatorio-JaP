@@ -30,7 +30,8 @@ function updateTotalCosts(){
 
 function updateSubtotal(){
     let cantidad = document.getElementById("cant").value;
-    subtotal = cantidad * productUnitCost;
+    let cantidad2 = document.getElementById("cant2").value;
+    subtotal = cantidad * productUnitCost/40 + cantidad2 * productUnitCost2;
     document.getElementById("subtotal").innerHTML = subtotal;
 
 }
@@ -46,14 +47,26 @@ function hidePaymentTypeNotSelected(){
 function showArticles(articles){
     let htmlContentToAppend = "";
     let article = articles[0];
+    let article2 = articles[1];
     productUnitCost = article.unitCost;
     document.getElementById("productName").innerHTML = article.name;
-    document.getElementById("precio").innerHTML = 'Precio unitario $' + article.unitCost;
+    document.getElementById("precio").innerHTML = 'Precio unitario $' + article.unitCost/40;
     document.getElementById("cant").value = article.count;
     document.getElementById("imagen").src = article.src;
-    document.getElementById("cantproducto").innerHTML = articles.length;
+
+
+    productUnitCost2 = article2.unitCost;
+    document.getElementById("productName2").innerHTML = article2.name;
+    document.getElementById("precio2").innerHTML = 'Precio unitario $' + article2.unitCost;
+    document.getElementById("cant2").value = article2.count;
+    document.getElementById("imagen2").src = article2.src;
+
+    document.getElementById("cantproducto").innerHTML = articles.length
+  
+  
     updateSubtotal();
     updateTotalCosts();
+    
 
 
 }
