@@ -61,15 +61,14 @@ function showArticles(articles){
     document.getElementById("cant2").value = article2.count;
     document.getElementById("imagen2").src = article2.src;
 
-    document.getElementById("cantproducto").innerHTML = articles.length
+    document.getElementById("cantproducto").innerHTML = article.count + article2.count;
   
   
     updateSubtotal();
     updateTotalCosts();
     
-
-
 }
+
 
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
@@ -165,13 +164,22 @@ document.addEventListener("DOMContentLoaded", function(e){
       updateSubtotal();
       updateTotalCosts();
     })
+
+    document.getElementById("cant2").addEventListener("change",function(){
+
+      updateSubtotal();
+      updateTotalCosts();
+    })
+
     document.getElementById("goldradio").addEventListener("change", function(){
       shippingPercentage = 0.13;
+
       updateTotalCosts();
   });
   
   document.getElementById("premiumradio").addEventListener("change", function(){
       shippingPercentage = 0.07;
+
       updateTotalCosts();
   });
 
