@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <title>Encontrá | Categorías</title>
+    <title>Encontrá | Mi perfil</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
       <nav class="navbar navbar-dark navbar-expand-lg site-header   sticky-top py-1 bg-dark">
@@ -49,33 +50,78 @@
               </div>
           </div>
         </nav>
-    <main role="main" class="pb-5">
-            <div class="text-center p-4">
-                <h2>Descripción de la categoría</h2>
-                <p class="lead">Encontrarás aquí toda la información de la categoría seleccionada.</p>
-            </div>
-            <div class="container">
-            <h3 id="categoryName"></h3>
-            <hr class="my-3">
-            <dl>
-                <dt>Descripción</dt>
-                <dd><p id="categoryDescription"></p></dd>
 
-                <dt>Cantidad de productos en la categoría</dt>
-                <dd><p id="productCount"></p></dd>
+        <div class="text-center p-4">
+          <h1>Mi perfil</h1>
+          
+      </div>
+     
+        
+        <div class="container mb-5">
+          <div class="row justify-content-around">
+            <div class="col-8 text-left">
+             <div class="row justify-content-between align-items-end my-5">
+               <div class="col-12 col-lg-5 mb-4 p-0" style="width: 200px; height: 150px;">
+                <div id="img-div">
+                  <!-- IMAGEN -->
+                </div>
+               </div>
+               <div class="col-12 col-lg-6 text-right">
+                 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalLong">Editar <i type="button" class="fas fa-edit"></i></button>
+               </div>
+             </div>
+              <!-- DATOS DE CUENTA -->
+              <h4 class="my-3">Datos de cuenta</h4>
+              <div class="row border rounded bg-light p-3 align-items-center shadow-sm">
+                <div class="col-6">
+                  <p class="my-0">Usuario</p>
+                </div>
+                <div class="col-5 bg-light">
+                  <p class="text-secondary my-0" id="user-nickname"></p>
+                </div>
+              </div>
+              <div class="row border rounded bg-light p-3 align-items-center shadow-sm">
+                <div class="col-6">
+                  <p class="my-0">Correo</p>
+                </div>
+                <div class="col-5 bg-light">
+                  <p class="text-secondary my-0" id="user-email"></p>
+                </div>
+              </div>
+            
+              
+              <!-- DATOS  -->
+              <h4 class="mt-5 mb-3">Datos personales</h4>
+              <div class="row border rounded bg-light p-3 align-items-center shadow-sm">
+                <div class="col-6">
+                  <p class="my-0">Nombre completo</p>
+                </div>
+                <div class="col-5 bg-light">
+                  <p class="text-secondary my-0" id="realName"></p>
+                </div>
+              </div>
+              <div class="row border rounded bg-light p-3 align-items-center shadow-sm">
+                <div class="col-6">
+                  <p class="my-0">Telefono de contacto</p>
+                </div>
+                <div class="col-5 bg-light">
+                  <p class="text-secondary my-0" id="user-tel"></p>
+                </div>
+              </div>
+              <div class="row border rounded bg-light p-3 align-items-center shadow-sm">
+                <div class="col-6">
+                  <p class="my-0">Documento</p>
+                </div>
+                <div class="col-5 bg-light">
+                  <p class="text-secondary my-0" id="user-document"></p>
+                </div>
+              </div>
 
-                <dt>Criterio para incluir productos en esta categoría</dt>
-                <dd><p id="productCriteria"></p></dd>
+        
+        
+        
 
-                <dt>Imágenes ilustrativas</dt>
-                <dd>
-                    <div class="row text-center text-lg-left pt-2" id="productImagesGallery">
-                    </div>
-                </dd>
-            </dl>
-            <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Ver productos</a>
-        </div>
-    </main>
+        
     <footer class="text-muted">
       <div class="container">
         <p class="float-right">
@@ -89,6 +135,6 @@
     <script src="js/vendor/jquery-3.4.1.min.js"></script>
     <script src="js/vendor/bootstrap.bundle.min.js"></script>
     <script src="js/init.js"></script>
-    <script src="js/category-info.js"></script>
+    <script src="js/my-profile.js"></script>
   </body>
 </html>
