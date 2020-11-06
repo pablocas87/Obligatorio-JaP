@@ -42,25 +42,24 @@ function showProductsList(){
         if (((minCount == undefined) || (minCount != undefined && parseInt(product.cost) >= minCount)) &&
             ((maxCount == undefined) || (maxCount != undefined && parseInt(product.cost) <= maxCount))){
             htmlContentToAppend += `
-            <a href="product-info.html" class="list-group-item list-group-item-action">
-                <div class="row">
-                    <div class="col-3">
-                        <img src="` + product.imgSrc + `" alt="` + product.description + `" class="img-thumbnail">
-                    </div>
-                    <div class="col">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h4 class="mb-1">`+ product.name +`</h4>
-                            <small class="text-muted">` + product.soldCount + ` venididos</small>
-                        </div>
-                        <div class="d-flex w-100 justify-content-between" >
-                        <p class="mb-1">` + product.description + `</p>
-                        <p> ` + product.currency + ``+ product.cost +`
-                        </p>
-                        </div>
-                    </div>
+                 <a href="product-info.html" class="list-group-item list-group-item-action col-md-3 mx-1 my-2">
+                 <div class="row px-1">
+                     <div>
+                    <img src="` + product.imgSrc + `" alt="` + product.description + `" class="img-thumbnail">
+                     </div>
+              </div>
+            <div class="row my-1 px-2">
+                <div class="d-flex w-100 justify-content-between">
+                        <h4 class="mb-1">` + product.name + `</h4>
+                        <small class="text-muted">` + product.soldCount + ` artículos</small>
                 </div>
-            </a>
-            `
+                    <p class="mb-1">` + product.description + `</p>
+            </div>
+            <div class="row mt-2 justify-content-end px-3">
+                <h5>` + product.cost + ` ` + product.currency + `.</h5>
+            </div>
+        </a>
+        `
         }
     }
 
