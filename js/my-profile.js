@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', (e)=>{
     let json = localStorage.getItem(usuarioActual);
     let stringStorage  = JSON.parse(json);
         
-    USUARIO.innerHTML = stringStorage.usuario
+    USUARIO.innerHTML = stringStorage.nickname
     EMAIL.innerHTML = stringStorage.email
     NOMBRE_REAL.innerHTML = stringStorage.realName
     TELEFONO.innerHTML = stringStorage.phone
