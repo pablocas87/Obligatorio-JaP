@@ -7,6 +7,21 @@ const PHOTO = document.getElementById('img-div');
 
 
 
+
+document.addEventListener('DOMContentLoaded', (e)=>{
+    let usuarioActual = window.localStorage.getItem('current-user')
+    let json = localStorage.getItem(usuarioActual);
+    let stringStorage  = JSON.parse(json);
+        
+    USUARIO.innerHTML = stringStorage.nickname
+    EMAIL.innerHTML = stringStorage.email
+    NOMBRE_REAL.innerHTML = stringStorage.realName
+    TELEFONO.innerHTML = stringStorage.phone
+    DOCUMENTO.innerHTML = stringStorage.document
+    PHOTO.innerHTML = stringStorage.photoUser;
+    PHOTO.getElementsByTagName('img')[0].style = " width: 200px; height:200px;"
+  })
+
 document.getElementById('guardar').addEventListener("click", function (e) {
     let user = document.getElementById('nick').value;
     let email = document.getElementById('email').value;
@@ -36,17 +51,3 @@ document.getElementById('guardar').addEventListener("click", function (e) {
     // se recarga la pagina para que se reflejen todos los cambios en el localstorage
     window.location.reload();
 });
-
-document.addEventListener('DOMContentLoaded', (e)=>{
-    let usuarioActual = window.localStorage.getItem('current-user')
-    let json = localStorage.getItem(usuarioActual);
-    let stringStorage  = JSON.parse(json);
-        
-    USUARIO.innerHTML = stringStorage.nickname
-    EMAIL.innerHTML = stringStorage.email
-    NOMBRE_REAL.innerHTML = stringStorage.realName
-    TELEFONO.innerHTML = stringStorage.phone
-    DOCUMENTO.innerHTML = stringStorage.document
-    PHOTO.innerHTML = stringStorage.photoUser;
-    PHOTO.getElementsByTagName('img')[0].style = " width: 200px; height:200px;"
-  })
