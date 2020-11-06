@@ -1,162 +1,229 @@
 <!DOCTYPE html>
 <!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
 <html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <title>Encontrá | Mi perfil</title>
+<!-- Se cumplen con las pautas indiduales de la entrega 7 29/10!-->
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <title>eMercado - Todo lo que busques está aquí</title>
+  <!-- Icons-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
       }
-  
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-  
-      html,
-      body {
-        height: 100%;
-      }
-    </style>
-  </head>
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+  </style>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <link href="css/dropzone.css" rel="stylesheet">
+
+</head>
+
   <body>
-      <nav class="navbar navbar-dark navbar-expand-lg site-header   sticky-top py-1 bg-dark">
-          <div class="container">
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                  <li class="nav-item">
-                      <a class="nav-link" href="portada.html">Inicio</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="categories.html">Categorías</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="products.html">Productos</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="sell.html">Vender</a>
-                  </li>
-                  <li class="nav-item">
-                      <div class="dropdown">
-                          <button class="btn btn-secondary dropdown-toggle" type="button" id="usuario" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          </button>
-                          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="cart.html">Mi carrito</a>
-                            <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
-                            <a class="dropdown-item" href="index.html" id="cerrar">Cerrar sesión</a>
-                          </div>
-                        </div>
-                  </li>
-                  </ul>
-              </div>
-          </div>
-        </nav>
-
-        <div class="text-center p-4">
-          <h1>Mi perfil</h1>
-          
+    <nav class="site-header sticky-top py-1 bg-dark">
+      <div class="container d-flex flex-column flex-md-row justify-content-between">
+        <a class="py-2 d-none d-md-inline-block" href="inicio.html">Inicio</a>
+        <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
+        <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
+        <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
+        <div class="cuadro-busqueda">
+          <input class="buscador-txt" type="search" placeholder="Buscar productos, marcas, etc..." id="buscadorInicio">
+          <a class="buscador-btn" href="#">
+            <i class="fas fa-search icono"></i>
+          </a>          
+        </div>
+        <a class="py-2 d-none d-md-inline-block" id="user" href="my-profile.html"></a>
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+        aria-haspopup="true" aria-expanded="false" id="user-a">
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="my-profile.html">Mi Cuenta</a>
+        <a class="dropdown-item" href="cart.html">Carrito</a>
+        <a class="dropdown-item" href="locales.html">Locales</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="index.html">Cerrar Sesión</a>
       </div>
-     
-        
-        <div class="container mb-5">
-          <div class="row justify-content-around">
-            <div class="col-8 text-left">
-             <div class="row justify-content-between align-items-end my-5">
-               <div class="col-12 col-lg-5 mb-4 p-0" style="width: 200px; height: 150px;">
-                <div id="img-div">
-                  <!-- IMAGEN -->
-                </div>
-               </div>
-               <div class="col-12 col-lg-6 text-right">
-                 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalLong">Editar <i type="button" class="fas fa-edit"></i></button>
-               </div>
+    </nav>
+    
+    <div class="container mb-5">
+      <div class="row justify-content-around">
+        <div class="col-8 text-left">
+         <div class="row justify-content-between align-items-end my-5">
+           <div class="col-12 col-lg-5 mb-4 p-0" style="width: 200px; height: 150px;">
+            <div id="img-div">
+              <!-- IMAGEN -->
+            </div>
+           </div>
+           <div class="col-12 col-lg-6 text-right">
+             <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalLong">Editar <i type="button" class="fas fa-edit"></i></button>
+           </div>
+         </div>
+          <!-- CUENTA -->
+          <h4 class="my-3">Datos de cuenta</h4>
+          <div class="row border rounded bg-light p-3 align-items-center shadow-sm">
+            <div class="col-6">
+              <p class="my-0">Usuario</p>
+            </div>
+            <div class="col-5 bg-light">
+              <p class="text-secondary my-0" id="user-nickname"></p>
+            </div>
+          </div>
+          <div class="row border rounded bg-light p-3 align-items-center shadow-sm">
+            <div class="col-6">
+              <p class="my-0">Correo</p>
+            </div>
+            <div class="col-5 bg-light">
+              <p class="text-secondary my-0" id="user-email"></p>
+            </div>
+          </div>
+          
+          
+          <!-- DATOS -->
+          <h4 class="mt-5 mb-3">Datos personales</h4>
+          <div class="row border rounded bg-light p-3 align-items-center shadow-sm">
+            <div class="col-6">
+              <p class="my-0">Nombre completo</p>
+            </div>
+            <div class="col-5 bg-light">
+              <p class="text-secondary my-0" id="realName"></p>
+            </div>
+          </div>
+          <div class="row border rounded bg-light p-3 align-items-center shadow-sm">
+            <div class="col-6">
+              <p class="my-0">Telefono de contacto</p>
+            </div>
+            <div class="col-5 bg-light">
+              <p class="text-secondary my-0" id="user-tel"></p>
+            </div>
+          </div>
+          <div class="row border rounded bg-light p-3 align-items-center shadow-sm">
+            <div class="col-6">
+              <p class="my-0">Documento</p>
+            </div>
+            <div class="col-5 bg-light">
+              <p class="text-secondary my-0" id="user-document"></p>
+            </div>
+          </div>
+           
+  
+           
+           <h4 class="mt-5 mb-3">Tarjetas de crédito</h4>
+           <div class="row border rounded bg-light p-3 align-items-center justify-content-between shadow-sm">
+             <div class="col-6">
+               <p class="my-0 text-warning">Aun no ingresaste ninguna tarjeta de credito</p>
              </div>
-              <!-- DATOS DE CUENTA -->
-              <h4 class="my-3">Datos de cuenta</h4>
-              <div class="row border rounded bg-light p-3 align-items-center shadow-sm">
-                <div class="col-6">
-                  <p class="my-0">Usuario</p>
-                </div>
-                <div class="col-5 bg-light">
-                  <p class="text-secondary my-0" id="user-nickname"></p>
-                </div>
-              </div>
-              <div class="row border rounded bg-light p-3 align-items-center shadow-sm">
-                <div class="col-6">
-                  <p class="my-0">Correo</p>
-                </div>
-                <div class="col-5 bg-light">
-                  <p class="text-secondary my-0" id="user-email"></p>
-                </div>
-              </div>
-            
-              
-              <!-- DATOS  -->
-              <h4 class="mt-5 mb-3">Datos personales</h4>
-              <div class="row border rounded bg-light p-3 align-items-center shadow-sm">
-                <div class="col-6">
-                  <p class="my-0">Nombre completo</p>
-                </div>
-                <div class="col-5 bg-light">
-                  <p class="text-secondary my-0" id="realName"></p>
-                </div>
-              </div>
-              <div class="row border rounded bg-light p-3 align-items-center shadow-sm">
-                <div class="col-6">
-                  <p class="my-0">Telefono de contacto</p>
-                </div>
-                <div class="col-5 bg-light">
-                  <p class="text-secondary my-0" id="user-tel"></p>
-                </div>
-              </div>
-              <div class="row border rounded bg-light p-3 align-items-center shadow-sm">
-                <div class="col-6">
-                  <p class="my-0">Documento</p>
-                </div>
-                <div class="col-5 bg-light">
-                  <p class="text-secondary my-0" id="user-document"></p>
-                </div>
-              </div>
+           </div>
+          
+        </div>
+      </div>
+    </div>
 
-        
-        
-        
-
-        
-    <footer class="text-muted">
       <div class="container">
-        <p class="float-right">
-          <a href="#">Volver arriba</a>
-        </p>
-        <p>Este sitio forma parte de Programación Aplicada - JAP</p>
-        <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+        <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+          <p>Clickea <a target="_blank" href="mapadelsitio.html">aquí</a> para ver el mapa del sitio.</p>
       </div>
     </footer>
-    <div id="spinner-wrapper"><div class="lds-ring"><div></div><div></div><div></div><div></div></div></div>
-    <script src="js/vendor/jquery-3.4.1.min.js"></script>
-    <script src="js/vendor/bootstrap.bundle.min.js"></script>
+    
+    <div id="spinner-wrapper">
+      <div class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <!-- .............. -->
+    <!-- MODAL FORMULARIO-->
+  
+  <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Editar mis datos</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <h3 class="border-bottom">Datos de cuenta</h3>
+              <label for="exampleInputPassword1">Nombre de cuenta</label>
+              <input type="text" class="form-control" id="nick" aria-describedby="emailHelp" required>
+              <small id="emailHelp" class="form-text text-muted">Puede utilizar un seudonimo o sobrenombre</small>
+            </div>
+            <div class="form-group mb-3">
+              <label for="exampleInputPassword1">E-mail</label>
+              <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="form-group mb-3">
+              <label for="exampleInputPassword1">Foto de perfil</label>
+              <input type="text" class="form-control" id="user-photo" required>
+              <small id="emailHelp" class="form-text text-muted">Debes ingresar la url de tu foto. Ingresa <span><a href="https://imgbb.com/upload">aqui</a></span></small>
+            </div>
+            <div class="form-group">
+              <h3 class="border-bottom">Datos de personales</h3>
+              <label for="exampleInputPassword1">Nombre completo</label>
+              <input type="email" class="form-control" id="real-name" required >
+              <small id="emailHelp" class="form-text text-muted">Nombre y primer apellido</small>
+            </div>
+            <div class="form-group mb-3">
+              <label for="exampleInputPassword1">Teléfono de contacto</label>
+              <input type="text" class="form-control" id="tel" required min="8">
+            </div>
+            <div class="form-group mb-3">
+              <label for="exampleInputPassword1">Documento</label>
+              <input type="number" class="form-control" id="document" required>
+              <small id="emailHelp" class="form-text text-muted">Sin puntos ni guión</small>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          <button type="submit" class="btn btn-primary" id="guardar" data-dismiss="modal">Guardar cambios</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--MODAL-->
+    <!-- .............. -->
+    
+    
+    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-auth.js"></script>
+    <!-- firebaseUI -->
+    <script src="https://cdn.firebase.com/libs/firebaseui/4.0.0/firebaseui.js"></script>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/dropzone.js"></script>
     <script src="js/init.js"></script>
+   
     <script src="js/my-profile.js"></script>
   </body>
-</html>
+  
+  </html>
